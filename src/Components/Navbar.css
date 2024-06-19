@@ -1,0 +1,137 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    /* margin: 20px 170px; */
+    
+    
+}
+
+.navbar img {
+    padding-left: 30px;
+    width: 70px;
+    height: 50px;
+    border-radius: 10%;
+    position: relative;
+}
+
+.nav-menu{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 60px;
+    font-size: 24px;
+    padding-right: 80px;
+
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    gap: 5px;
+    color: rgb(173, 10, 173);
+    /* color: #e123ab; */
+}
+.title span{
+    background: linear-gradient(270deg , #DF8908 10% , #B415FF 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+
+.nav-connet {
+    padding: 10px 40px;
+    border-radius: 50px;
+    background: linear-gradient(270deg , #DF8908 10% , #B415FF 100%);
+    font-size: 24px;
+    cursor: pointer;
+    transition: 0.5s;
+    margin: 5px 40px;
+
+    
+}
+
+.nav-connet:hover {
+    transform: scale(1.05);
+}
+
+.nav-menu li {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    
+}
+
+.anchor-link {
+    text-decoration: none;
+    color: white;
+}
+
+.nav-mob-close {
+    display: none;
+}
+
+.nav-mob-open {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        margin: 20px 20px;
+
+    }
+
+    .nav-connet {
+        display: none;
+    }
+
+    .nav-mob-open {
+        display: block;
+        position: fixed;
+        right: 30px;
+        width: 30px;
+        cursor: pointer;
+        z-index: 3;
+    }
+
+    .nav-mob-close {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        width: 30px;
+        cursor: pointer;
+        z-index: 3;
+        color: black;
+    }
+
+    .nav-menu {
+        position: fixed;
+        flex-direction: column;
+        align-items: start;
+        top: 0;
+        right: -350px;
+        gap: 30px;
+        background: black;
+        /* background-color: white; */
+        width: 350px;
+        height: 100%;
+        z-index: 2;
+        transition: right 0.5s;
+        padding-top: 50px;
+    }
+
+    .nav-menu li {
+        font-size: 30px;
+        padding-left: 50px;
+        flex-direction: row;
+        gap: 20px;
+        color: black;
+
+    }
+}
