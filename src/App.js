@@ -1,25 +1,32 @@
 import React from 'react';
 import './App.css';
-import Navbar from './Components/Navbar';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Hero from './Components/Hero/Hero';
 import About from './Components/About/About';
 import Skills from './Components/Skills/Skills';
 import Contact from './Components/Contact/Contact';
-import MyWork from './Components/MyWork/MyWork';
 import Footer from './Components/Footer/Footer';
-
+import Navbar from './Components/Navbar/Navbar';
+import Projects from './Components/Projects/Projects';
+import ProjectDetail from './Components/ProjectDetail/ProjectDetail';
 
 function App() {
   return (
     <div className="App">
       <Navbar/>
-      <Hero/>
-      <About/>
-      <Skills/>
-      <MyWork/>
-      <Contact/>
-      <Footer/>
-      {/* Add other components here */}
+      <Hero />
+      <About />
+      <Skills />
+      <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Projects />} />
+        <Route path="/projects/:projectId" element={<ProjectDetail />} />
+      </Routes>
+    </BrowserRouter>
+      {/* <Projects />
+      <ProjectDetail/> */}
+      <Contact />
+      <Footer />
     </div>
   );
 }
